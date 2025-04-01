@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
-   --purple:#8e44ad;
+
    --red:#c0392b;
    --orange:#f39c12;
    --black:#333;
@@ -271,7 +271,7 @@ section{
    margin-top: 1.5rem;
    padding:1.5rem;
    background-color: var(--light-bg);
-   color:var(--purple);
+   color:var(--black);
    font-size: 2rem;
    border-radius: .5rem;
    border:var(--border);
@@ -412,7 +412,7 @@ section{
 }
 
 .orders .box-container .box p span{
-   color:var(--purple);
+   color:var(--black);
 }
 
 .orders .box-container .box form{
@@ -456,7 +456,7 @@ section{
 }
 
 .users .box-container .box p span{
-   color:var(--purple);
+   color:var(--black);
 }
 
 .users .box-container .box .delete-btn{
@@ -489,7 +489,7 @@ section{
 }
 
 .messages .box-container .box p span{
-   color:var(--purple);
+   color:var(--black);
 }
 
 .messages .box-container .box .delete-btn{

@@ -1,64 +1,92 @@
 .footer {
-  width: 80%;
-  background-color: rgb(203, 201, 201);
-  /* padding: 5px 0; */
-  margin-top: auto;
-  padding: 20px 15px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.footer-logo {
-  border-right: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 60px 0;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
 }
 
-.footer-logo img {
-  object-fit: contain;
-  width: 100%;
-
-  margin-top: 5px;
-  margin-bottom: 20px;
+.footer .col-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
-.services .col ul {
+.footer ul {
   list-style-type: none;
-  color: black;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+  margin: 0;
 }
-.services .col ul a {
-  color: black;
+
+.footer ul li {
+  margin-bottom: 12px;
+}
+
+.footer ul li a {
+  color: #555;
   text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
 }
 
-/* .services .col ul i {
-  font-size: 20px;
-} */
-
-.col-title {
-  font-weight: 700;
+.footer ul li a:hover {
+  color: #007bff;
 }
 
-.info i {
-  /* font-size: 20px; */
-  margin-right: 5px;
+.footer .social-links {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
 }
 
-.footer i {
-  font-size: 1.5em;
+.footer .social-links li {
+  margin: 0 12px;
 }
 
-@media (max-width: 768px) {
-  .info .col {
-    display: flex;
-    flex-direction: column;
+.footer .social-links i {
+  font-size: 26px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.footer .social-links i:hover {
+  color: #007bff;
+}
+
+.footer .info i {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+.footer .info {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer .info div {
+  margin-bottom: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+  .footer .row {
+      text-align: center;
   }
-}
 
-@media (max-width: 576px) {
+  .footer .col-md-4 {
+      margin-bottom: 20px;
+  }
+
+  .footer .col-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+
+  .footer .social-links {
+      justify-content: center;
+  }
+
+  .footer .social-links i {
+      font-size: 22px;
+  }
 }

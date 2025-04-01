@@ -14,7 +14,7 @@ if(isset($_POST['update_order'])){
     $order_update_id =$_POST['order_id'];
     $update_status=$_POST['update_status'];
     mysqli_query($conn, "UPDATE `oder` SET status='$update_status'
-                         WHERE oder_id = '$order_update_id'")
+                         WHERE order_id = '$order_update_id'")
     or die('query failed');
     $message[]='Trạng Thái Đơn Hàng Đã Được Cập Nhập';
 
@@ -23,7 +23,7 @@ if(isset($_POST['update_order'])){
 //delete
 if(isset($_GET['delete'])){
     $delete_id=$_GET['delete'];
-    mysqli_query($conn, "DELETE FROM `oder` WHERE oder_id='$delete_id'")
+    mysqli_query($conn, "DELETE FROM `oder` WHERE order_id='$delete_id'")
     or die('query failed');
     header("Location: admin_orders.php");
 }
@@ -69,7 +69,7 @@ if(isset($_GET['delete'])){
             <p>Phương thức thanh toán: <span><?php echo $fetch_orders['payment_method'];?></span></p>
             <p>Trạng thái:</span></p>
             <form action="" method="post">
-                <input type="hidden" name="order_id" value="<?php echo $fetch_orders['oder_id'];?>">
+                <input type="hidden" name="order_id" value="<?php echo $fetch_orders['order_id'];?>">
                 <select name="update_status" value="<?php echo $fetch_orders['status'];?>">
                     <option value="" selected disabled><?php
                                                             if($fetch_orders['status']=='1'){
@@ -83,7 +83,7 @@ if(isset($_GET['delete'])){
                     <option value="2"> Hoàn thành</option>
                 </select>
                 <input type="submit" value="cập nhập" name="update_order" class="option-btn">
-                <a href="admin_orders.php?delete=<?php echo $fetch_orders['oder_id'];?>"
+                <a href="admin_orders.php?delete=<?php echo $fetch_orders['order_id'];?>"
                 onclick="return confirm('Bạn Muốn Xóa Đơn Hàng Này?');"
                 class="delete-btn">xóa đơn</a>
             </form>

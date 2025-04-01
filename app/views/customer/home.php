@@ -35,6 +35,9 @@ include('../../controller/product_ctl.php');
             </h4>
 
             <ul class="category-list animate">
+            <li class="category-item">
+                <a href="../customer/home.php" class="category-item__link">Tất cả sách</a>
+              </li>
               <li class="category-item">
                 <a href="home.php?category_id=1" class="category-item__link">Tiểu thuyết</a>
               </li>
