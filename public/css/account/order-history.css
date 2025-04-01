@@ -1,0 +1,38 @@
+body {
+  background-color: #f1f6f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 80%;
+}
+.main-container {
+  background-color: #f1f6f5;
+}
+
+.history {
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 1em;
+}
+
+.history-status {
+  background-color: #82c3ec;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.history-title {
+  font-weight: 700;
+  margin-bottom: 1em;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.7em;
+}
+
+.status-count p {
+  font-weight: 600;
+}

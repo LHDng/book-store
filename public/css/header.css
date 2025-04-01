@@ -1,0 +1,141 @@
+.header {
+  /* height: 10%; */
+  background-color: rgb(203, 201, 201);
+}
+
+.header a {
+  margin: 0;
+  /* padding: 0; */
+}
+
+.animate {
+  transition: 0.2s linear;
+}
+
+.header-wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  /* height: 70px; */
+}
+
+.logo img {
+  object-fit: contain;
+  /* height: 60px; */
+  height: 60px;
+}
+
+.menu-search {
+  display: flex;
+  gap: 0.7em;
+  align-items: center;
+}
+
+.menu-search .search-button {
+  padding: 0;
+  border: 0;
+  background-color: white;
+  position: absolute;
+  left: 180px;
+  top: 5px;
+}
+
+.header-icon {
+  width: 2.2em;
+  height: 2.2em;
+}
+
+.profile-link {
+  /* display: none; */
+}
+
+.guest-button {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-left: 15px;
+}
+
+#search {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icons {
+  display: flex;
+  /* gap: 1em; */
+}
+
+.menu-wrapper {
+  position: relative;
+  /* margin-bottom: 5px; */
+}
+
+.menu {
+  /* display: none; */
+  opacity: 0;
+  position: absolute;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* border: 1px solid black; */
+  background-color: rgb(217, 217, 217);
+  border-radius: 10px;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* top: 5px; */
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+.category-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu h5 {
+  color: brown;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  /* margin: 0; padding-left: 20px; */
+}
+
+.icon-button {
+  padding: 0.7em;
+  /* margin: 5px; */
+  border-radius: 50%;
+  /* width: 3em;
+  height: 3em; */
+}
+.icon-button:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(196, 195, 195);
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 70%;
+  }
+  .logo img {
+    height: 5vh;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+  /* .menu-toggle {
+    display: none;
+  } */
+}

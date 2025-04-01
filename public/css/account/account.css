@@ -1,0 +1,65 @@
+body {
+  background-color: #f1f6f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 80%;
+}
+.main-container {
+  background-color: #f1f6f5;
+}
+.profile ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.profile-title {
+  font-weight: 700;
+  margin-bottom: 1em;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.7em;
+}
+
+.logout-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile {
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 1em;
+}
+
+.profile ul li {
+  position: relative;
+}
+
+.profile .edit-button {
+  padding: 0;
+  border: none;
+  position: absolute;
+  background-color: white;
+  right: 10px;
+  top: 5px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* 
+.modal-footer {
+  justify-content: center;
+} */
