@@ -1,11 +1,12 @@
 <?php
     include('../config.php'); 
+    //Xử lý thêm
     if(isset($_POST['book_id'])) {
         include('../model/checkLogin_model.php'); 
         $book_id = $_POST['book_id'];
         $customer_id = $_SESSION['customer_id'];
         $quantity = $_POST['quantity'];
-
+        //Khi đã có trong giỏ hàng
         $book = "SELECT * FROM `cart` WHERE book_id=$book_id AND customer_id=$customer_id";
         $book_run = mysqli_query($conn,$book);
         if(mysqli_num_rows($book_run) > 0 ){
@@ -17,7 +18,9 @@
                 header('location: ../customer/home.php');
                 exit(0);
             }
-        }else{
+        }
+        //Ch có trong giỏ hàng
+        else{
             $add_cart = "INSERT INTO cart (customer_id,book_id,quantity) VALUE ($customer_id,$book_id,$quantity)";
             $add_cart_run = mysqli_query($conn,$add_cart);
             if(!$add_cart_run){
@@ -26,6 +29,7 @@
             }
         }
     }
+    //đổi số lượng
     if(isset($_POST['change_quantity'])){
         include('../model/checkLogin_model.php'); 
         $quantity = $_POST['change_quantity'];

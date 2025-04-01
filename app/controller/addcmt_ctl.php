@@ -1,5 +1,6 @@
 <?php
     include('../config.php');
+    //Thêm review
     if(isset($_POST['comment']) && !empty($_POST['comment']) && isset($_SESSION['customer_id'])){
         $comment = $_POST['comment'];
         $book_id = $_POST['book_id'];

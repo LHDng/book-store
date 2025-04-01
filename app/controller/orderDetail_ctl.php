@@ -4,7 +4,7 @@
 
         if(isset($_GET['oder_id'])){
             $oder_id = $_GET['oder_id'];
-            $db_oder="SELECT * FROM oder WHERE oder_id='$oder_id' LIMIT 1";
+            $db_oder="SELECT * FROM oder WHERE order_id='$oder_id' LIMIT 1";
             $db_oder_run = mysqli_query($conn,$db_oder);
             // LAY THONG TIN CUA KHACH HANG
             // TRANG THAI DON HANG, NGAY DAT HANG, GIA TIEN,PHUONG THUC THANH TOAN
@@ -67,7 +67,7 @@
             // LAY THONG TIN SAN PHAM
 
 
-            $db_quantity="SELECT * FROM `contain` WHERE oder_id='$oder_id'";
+            $db_quantity="SELECT * FROM `contain` WHERE order_id='$oder_id'";
             $db_quantity_run = mysqli_query($conn,$db_quantity);
             $book_info = array(); //luu thong tin cua sach
             $book_soluong = array(); // luu so luong cua quan sach do (quan sach ben ben tren)

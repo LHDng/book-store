@@ -1,8 +1,9 @@
 <?php
     include('../../config.php');
     include('../../model/ctmAccount_model.php');
-    if(isset($_SESSION['customer_id'])){
 
+    //Lấy thông tin người dùng 
+    if(isset($_SESSION['customer_id'])){
         $customer_id = $_SESSION['customer_id'];
         $db_account="SELECT * FROM customer WHERE customer_id='$customer_id' LIMIT 1";
         $db_account_run = mysqli_query($conn,$db_account);
@@ -63,11 +64,7 @@
             }
         }
 
-        // ##########################################################
-        // ##########################################################
-        // ##########################################################
-        // for address
-
+        //ql địa chỉ
         $db_account_add="SELECT * FROM `address` WHERE customer_id='$customer_id'";
         $db_account_add_run = mysqli_query($conn,$db_account_add);
         $temp_add_run = mysqli_query($conn,$db_account_add);
@@ -82,8 +79,8 @@
                 }
             }
         }
-        // ##########################################################
-        // for change address
+
+        // đổi địa chỉ
         $new_address="";
         if(isset($_POST['new-address-sm'])){
             $new_address = $_POST['new-address'];
@@ -109,10 +106,8 @@
         if(isset($_POST['change-name-bt'])){
             $_SESSION['status'] = "Thêm thông tin thành công";
         }
-        // ##########################################################
-        // ##########################################################
-        // ##########################################################
-        // for oder
+       
+        // ql đơn hàng
 
         $db_account_oder="SELECT * FROM `oder` WHERE customer_id='$customer_id' AND `status`!='0'";
         $db_account_oder_run = mysqli_query($conn,$db_account_oder);

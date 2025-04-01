@@ -2,6 +2,7 @@
     include('../../config.php');
     include('../../model/checkLogin_model.php');
 
+    //lấy rv
     $comment = "SELECT * FROM `rate` WHERE customer_id=$_SESSION[customer_id]";
     $comment_run = mysqli_query($conn,$comment);
     if(!$comment_run){

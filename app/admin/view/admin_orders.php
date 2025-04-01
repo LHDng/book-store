@@ -62,7 +62,7 @@ if(isset($_GET['delete'])){
                 $fetch_name=mysqli_fetch_assoc($select_users_name);
         ?>
         <div class="box">
-            <p>Mã đơn: <span><?php echo $fetch_orders['oder_id'];?></span></p>
+            <p>Mã đơn: <span><?php echo $fetch_orders['order_id'];?></span></p>
             <p>Khách hàng: <span><?php echo $fetch_name['name'];?></span></p>
             <p>Ngày đặt: <span><?php echo $fetch_orders['oder_date'];?></span></p>
             <p>Tổng đơn: <span><?php echo number_format($fetch_orders['cost'], 0, ',', '.');?>đ</span></p>

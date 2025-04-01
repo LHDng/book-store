@@ -3,7 +3,7 @@
     if(isset($_GET['delete_id'])){
         $add_id = $_GET['delete_id'];
 
-
+        //kt địa chỉ có trong đơn hàng đã thanh toán chch
         $check_add = "SELECT * FROM `oder` WHERE address_id =$add_id ";
         $check_add_run = mysqli_query($conn,$check_add);
         
@@ -12,7 +12,7 @@
             header("location: ../views/customer/address.php");
             exit(0);
         }
-
+        
         $delete_add= "DELETE FROM `address` WHERE address_id =$add_id";
         $delete_add_run = mysqli_query($conn,$delete_add);
 

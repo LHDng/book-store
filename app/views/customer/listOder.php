@@ -23,12 +23,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>$row[oder_id]</td>
+                            <td>$row[order_id]</td>
                             <td>$row[oder_date]</td>
                             <td>$cost</td>
                             <td>
                                 <div class='action'>
-                                <a href='order-detail.php?oder_id=$row[oder_id]'> <button type='button' class='btn btn-primary'>Chi tiết</button></a>
+                                <a href='order-detail.php?oder_id=$row[order_id]'> <button type='button' class='btn btn-primary'>Chi tiết</button></a>
                                 </div>
                             </td>
                             </tr>

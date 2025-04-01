@@ -1,6 +1,8 @@
 <?php
     include('../config.php');
     include('../model/checkLogin_model.php');
+
+    //Xóa khỏi giỏ hàng
     if(isset($_GET['delete_book']) && isset($_SESSION['customer_id'])){
         $delete_book= "DELETE FROM `cart` WHERE customer_id =$_SESSION[customer_id] AND book_id=$_GET[delete_book]";
         $delete_book_run = mysqli_query($conn,$delete_book);
@@ -12,6 +14,7 @@
             exit(0);
         }
     }
+    //thanh toán đơn hàng
     if(isset($_POST['buy']) && isset($_SESSION['customer_id'])){
         $customer_id = $_SESSION['customer_id'];
         $total_price = $_POST['all-total-price'];
@@ -28,25 +31,25 @@
             exit(0);
         }
 
-        // for contain
-
-        $get_oder_id = "SELECT oder_id FROM `oder` ORDER BY oder_id DESC LIMIT 1";
+        //Thêm vào csdl
+        $get_oder_id = "SELECT order_id FROM `oder` ORDER BY order_id DESC LIMIT 1";
         $get_oder_id_run = mysqli_query($conn,$get_oder_id);
         $oder_id = mysqli_fetch_assoc($get_oder_id_run);
 
-        // UPDATE payment
-
+        // Chi tiết đơn hàng
         $get_cart = "SELECT * FROM `cart` WHERE customer_id=$customer_id";
         $get_cart_run = mysqli_query($conn,$get_cart);
         while($row = mysqli_fetch_array($get_cart_run)){
-            $contain = "INSERT INTO contain (oder_id,book_id,quantity)
-                        VALUES ($oder_id[oder_id] , $row[book_id], $row[quantity])";
+            $contain = "INSERT INTO contain (order_id,book_id,quantity)
+                        VALUES ($oder_id[order_id] , $row[book_id], $row[quantity])";
             $contain_run = mysqli_query($conn,$contain);
             if(!$contain_run){
                 header('location: ../views/LoginAndSignup/login.php');
                 exit(0);
             }
         }
+
+        
         if($order_run && $get_cart_run){
             $_SESSION['status'] = "Mua hành thành công";
             header('location: ../views/customer/order-history.php');

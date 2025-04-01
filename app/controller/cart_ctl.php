@@ -1,9 +1,10 @@
 <?php
     include('../../config.php');
     include('../../model/checkLogin_model.php');
+
     if(isset($_SESSION['customer_id'])){
         $customer_id = $_SESSION['customer_id'];
-
+        //Lấy dữ liệu từ giỏ hàng
         $db_cart= "SELECT * FROM cart WHERE customer_id='$customer_id'";
         $db_cart_run = mysqli_query($conn,$db_cart);
 
@@ -13,7 +14,7 @@
         }
         $number_item = mysqli_num_rows($db_cart_run);
 
-
+        //Lấy địa chỉ
         $db_address = "SELECT * FROM `address` WHERE customer_id='$customer_id'"; 
         $db_address_run = mysqli_query($conn,$db_address);
         if(!$db_address_run){
@@ -27,6 +28,7 @@
             header('location: ../customer/address.php');
             exit(0);
         }
+        //tính tiền
         $total_price = 0;
         
 
