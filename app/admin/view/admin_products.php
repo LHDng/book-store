@@ -221,27 +221,30 @@ if (isset($_POST['update_book'])) {
 
                                 <?php
                                 // get current categogy name
-                                $categogy_name = mysqli_query($conn, "SELECT * FROM `categogy` WHERE category_id='" . $fetch_update['category_id'] . "'")
+                                $categogy_name = mysqli_query($conn, "SELECT * FROM `category` WHERE category_id='" . $fetch_update['category_id'] . "'")
                                     or die('query failed');
                                 $categogy_current = mysqli_fetch_assoc($categogy_name);
                                 ?>
 
                                 <option value="<?php echo $categogy_current['category_id']; ?>">
-                                    <?php echo $categogy_current['name']; ?></option>
+                                    <?php echo $categogy_current['name']; ?>
+                                </option>
                                 <?php
                                 //display categogy list
-                                $categogys = mysqli_query($conn, "SELECT * FROM `categogy`")
+                                $categogys = mysqli_query($conn, "SELECT * FROM `category`")
                                     or die('query failed');
                                 while ($categogy = mysqli_fetch_assoc($categogys)) {
                                     echo '<option value="' . $categogy['category_id'] . '">' . $categogy['name'] . '</option>';
                                 }
-                                ;
+                                
                                 ?>
 
                             </select>
 
-                            <input type="text" name="update_cover_image" value="<?php echo $fetch_update['cover_image']; ?>"
+                            <input type="text" name="update_cover_image"
+                                value="<?php echo htmlspecialchars($fetch_update['cover_image'], ENT_QUOTES, 'UTF-8'); ?>"
                                 class="box" required placeholder="Nhập Link Ảnh">
+
                         </div>
                         <textarea rows="3" name="update_description" class="box" required
                             placeholder="Nhập Giới Thiệu"><?php echo $fetch_update['description']; ?></textarea>
